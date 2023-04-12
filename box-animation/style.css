@@ -1,0 +1,46 @@
+*,*::after,*::before{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  padding: 0.6em;
+  background: white;
+  border: 6px solid black;
+  animation: rotation 12s infinite linear;
+}
+
+@keyframes rotation {
+  0%{
+    rotate: 0;
+  }
+  100%{
+    rotate: 360deg;
+  }
+}
+
+.inner{
+  width: 64px;
+  position: relative;
+}
+
+.inner::before{
+  content:'';
+  animation: rotation 0.5s linear infinite reverse;
+  border: 6px solid white;
+  position: absolute;
+  background: #000;
+  inset: 0;
+}
